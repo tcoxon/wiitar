@@ -1,7 +1,7 @@
 
-all: pywiimote.so
+all: pywiimote.so pywiimote.py
 
-pywiimote_wrap.c: pywiimote.c pywiimote.h pywiimote.i
+pywiimote.py pywiimote_wrap.c: pywiimote.c pywiimote.h pywiimote.i
 	swig -python -I../../libwiimote/src pywiimote.i
 
 pywiimote.so: pywiimote_wrap.c pywiimote.c pywiimote.h
