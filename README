@@ -1,0 +1,43 @@
+wiitar README
+-------------
+
+Use your Wii Guitar Hero 3 Controller as a MIDI instrument.
+
+Good luck building wiitar. It's by no means an easy task!
+
+Dependencies:
+
+   * python2.6-dev (CPython 2.6 + development headers)
+   * libasound2-dev (ALSA)
+   * autoconf
+   * libbluetooth-dev (BlueZ)
+   * A MIDI synthesiser. I've been testing with the real-time software
+     synthesiser, Timidity++.
+   * swig (wrapper interface generator)
+   * libwiimote (http://github.com/tcoxon/libwiimote)
+
+Instructions:
+
+   * First, build libwiimote:
+      $ autoconf
+      $ ./configure
+      $ make
+   * Next, go into wiitar, and type make. If wiitar and libwiimote are
+      in the right places relative to each other (i.e. their base
+      directories are adjascent), it should all just work. If not, you'll
+      probably need to edit wiitar/pywiimote_src/Makefile.
+   * Put libwiimote/lib on your LD_LIBRARY_PATH env variable.
+   * We need the address of your wiimote before we can run wiitar. Run
+      `hcitool scan', and copy the 12-hex-digit BDADDR next to your wiimote
+      (recognisable by "Nintendo RVL-CNT-*").
+   * Execute `python wiitar.py <BDADDR>' substituting the BDADDR of your
+      wiimote for <BDADDR>
+   * Press the HOME button on the wiimote to exit.
+
+Where it is in terms of code:
+
+   * I really have no idea. I last worked on this a couple of years ago and
+      I didn't keep any notes.
+
+   * There was some work on a "MIDI Hero" game. I don't remember how far
+      that got.
