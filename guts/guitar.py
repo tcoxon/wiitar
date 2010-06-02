@@ -203,9 +203,10 @@ class WiitarGuitarAdapter(object):
         if not status: return
         
         ## Tilting guitar moves up/down by 1 octave
-        if wiitar.wiimote.tilt.y < -40: self.guitar.offset_octaves = 1
-        elif wiitar.wiimote.tilt.y > 40: self.guitar.offset_octaves = -1
-        else: self.guitar.offset_octaves = 0
+        #if wiitar.wiimote.tilt.y < -40: self.guitar.offset_octaves = 1
+        #elif wiitar.wiimote.tilt.y > 40: self.guitar.offset_octaves = -1
+        #else: self.guitar.offset_octaves = 0
+        self.guitar.offset_octaves = 0
                 
         if CLASSIC_KEYS["plus"] not in wiitar.classic_keys_down:
             if self.mode in [1,3]:
