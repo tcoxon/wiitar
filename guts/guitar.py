@@ -185,19 +185,20 @@ class WiitarGuitarAdapter(object):
             return fret_val
     
     def record_event(self, wiitar, is_classic, key, status):
-        if status: return
-        if self.mode != 3:
-            if  wiitar.fret_val == 0: return
-            
-            self.last_mode = self.mode
-            self.mode = 3
-            self.chord_pattern = wiitar.fret_val
-            self.chord_notes = []
-            print "Recording for chord", fret_chord_to_tab(wiitar.fret_val), ":"
-        else:
-            self.mode = self.last_mode
-            print "Finished recording chord", fret_chord_to_tab(self.chord_pattern)
-            self.guitar.chords[self.chord_pattern] = self.chord_notes
+        pass
+#        if status: return
+#        if self.mode != 3:
+#            if  wiitar.fret_val == 0: return
+#            
+#            self.last_mode = self.mode
+#            self.mode = 3
+#            self.chord_pattern = wiitar.fret_val
+#            self.chord_notes = []
+#            print "Recording for chord", fret_chord_to_tab(wiitar.fret_val), ":"
+#        else:
+#            self.mode = self.last_mode
+#            print "Finished recording chord", fret_chord_to_tab(self.chord_pattern)
+#            self.guitar.chords[self.chord_pattern] = self.chord_notes
     
     def strum_event(self, wiitar, is_classic, key, status):
         if not status: return
@@ -238,30 +239,34 @@ class WiitarGuitarAdapter(object):
         self.guitar.mute()
     
     def one_event(self, wiitar, is_classic, key, status):
-        if status:
-            ## single note mode
-            self.mode = 1
-            print "Switched to single-note mode."
+        pass
+#        if status:
+#            ## single note mode
+#            self.mode = 1
+#            print "Switched to single-note mode."
     
     def two_event(self, wiitar, is_classic, key, status):
-        if status:
-            ## chord mode
-            self.mode = 2
-            print "Switched to chord-playing mode."
+        pass
+#        if status:
+#            ## chord mode
+#            self.mode = 2
+#            print "Switched to chord-playing mode."
     
     def wplus_event(self, wiitar, is_classic, key, status):
-        if status:
-            ## plus on the WIIMOTE, not CLASSIC controller
-            ## switch to 12 per octave mode
-            self.octave_mode = 12
-            print "Switched to 12 note per octave mode."
+        pass
+#        if status:
+#            ## plus on the WIIMOTE, not CLASSIC controller
+#            ## switch to 12 per octave mode
+#            self.octave_mode = 12
+#            print "Switched to 12 note per octave mode."
     
     def wminus_event(self, wiitar, is_classic, key, status):
-        if status:
-            ## minus on the WIIMOTE, not CLASSIC controller
-            ## switch to 8 per octave mode
-            self.octave_mode = 8
-            print "Switched to 8 note per octave mode."
+        pass
+#        if status:
+#            ## minus on the WIIMOTE, not CLASSIC controller
+#            ## switch to 8 per octave mode
+#            self.octave_mode = 8
+#            print "Switched to 8 note per octave mode."
     
     def whammy_event(self, wiitar, whammy_val):
         # whammy_val ranges from 15 (fully up) to 26 (fully down)
