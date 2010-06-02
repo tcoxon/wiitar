@@ -2,7 +2,7 @@
 all: pywiimote.so midipy.so
 
 pywiimote.so:
-	cd pywiimote_src && make && mv pywiimote.so .. && mv pywiimote.py ..
+	cd pywiimote_src && make && mv _pywiimote.so .. && mv pywiimote.py ..
 
 midipy.so:
 	cd midipy_src && make && mv midipy.so ..
