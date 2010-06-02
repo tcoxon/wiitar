@@ -1,0 +1,4 @@
+
+import midihero
+
+midihero.main()
