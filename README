@@ -3,14 +3,29 @@ wiitar README
 
 Use your Wii Guitar Hero 3 Controller as a MIDI instrument.
 
+Really awful video clip here: http://www.youtube.com/watch?v=g8V155Q8f50
+
+Previously wiitar supported different modes (allowing you to record and play
+chords for example), but a change in libwiimote seems to have messed up
+reading the +, -, 1 and 2 buttons, so I've commented out the relevant parts
+in wiitar/guts/guitar.py. Do submit patches if you fix it :-)
+
+Fret button presses are converted to notes with a binary encoding, i.e.
+press the first fret and strum down to get the first note (C, I think), and
+use the first two frets to get the third note (E?). Strum up while holding
+notes to get a sharp note.
+
 Good luck building wiitar. It's by no means an easy task!
+
+Also, I know absolutely nothing about music. I'm just a hacker.
 
 Dependencies:
 
    * python2.6-dev (CPython 2.6 + development headers)
    * libasound2-dev (ALSA)
    * autoconf
-   * libbluetooth-dev (BlueZ)
+   * libbluetooth-dev (BlueZ, and obviously, your computer will need
+      bluetooth hardware)
    * A MIDI synthesiser. I've been testing with the real-time software
      synthesiser, Timidity++.
    * swig (wrapper interface generator)
